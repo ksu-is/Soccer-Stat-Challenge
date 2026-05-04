@@ -5,7 +5,7 @@ import random
 with open("questions.json", "r") as f:
     quiz = json.load(f)
 
-# Pick 10 random questions (since your system uses up to 10)
+# Pick 10 random questions (since the system uses up to 10)
 quiz = random.sample(quiz, 10)
 
 score = 0
@@ -19,7 +19,7 @@ for i, q in enumerate(quiz, start=1):
 
     correct = user_answer in q["answers"]
 
-    # 🔹 First 3 questions (normal scoring)
+    # First 3 questions (normal scoring)
     if not bonus_active:
         if correct:
             print("Correct!")
@@ -35,7 +35,7 @@ for i, q in enumerate(quiz, start=1):
             print("Correct answer:", q["answers"][0])
             streak = 0
 
-    # 🔹 Bonus rounds
+    # Bonus rounds
     else:
         bonus_stage += 1
 
